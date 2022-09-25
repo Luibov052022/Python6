@@ -1,11 +1,11 @@
 # Задача 41: Напишите программу вычисления арифметического выражения заданного строкой. Используйте операции +,-,/,*. приоритет операций стандартный.
 
 import re
-string = '5+6*3/2-9'
+string = '5*3+6*3/2-10'
 
   
 def Counting(string):
-    numbers_str = re.findall(r'\d', string)
+    numbers_str = re.findall(r'\d+', string)
     numbers = [int(i) for i in numbers_str]
     expr = re.findall(r'[+, --, /, *]', string)
     resault = 0
@@ -47,3 +47,4 @@ def Counting(string):
     return answer    
     
 print(f'{string} = {Counting(string)}')
+print(eval(string))
